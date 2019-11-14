@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/e-commerce_shoping-car.css">
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	
+    <div class="headder-top">
+        <div class="width1200 headder-top-content">
+            <div><span>{用户名}</span>欢饮来到信达！<span class="user-quit">[退出]</span></div>
+            <ul>
+                <li><a href="e_shoppingcar"><i class="fa fa-shopping-cart fa-lg"></i>
+                        购物车<span>1</span>件</a></li>
+                <li>
+                    <a href="e-commerce_order.html">
+                        <i class="fa fa-file-text-o fa-lg"></i> 我的订单
+                    </a>
+                </li>
+                <li>服务商入口</li>
+            </ul>
+        </div>
+    </div>
+    <div class="logo-search width1200">
+        <img class="logo" src="./images/logo-blue.png" />
+        <ul class="search">
+            <li>
+                <span class="search-product font-aqua">产品</span>丨
+                <span class="search-service">服务商</span>
+            </li>
+            <li>
+                <input placeholder="搜索您需要的服务或服务商" type="text" th:value="${id}" name="id"  id="id">
+                <span class="search-btn">
+                <i class="fa fa-search fa-2x"></i></span>
+            </li>
+            <li>
+                热门服务：<span>社保开户</span> <span>公司注册</span>
+            </li>
+        </ul>
+        <img class="tel" src="./images/xinda-tel.png" alt="">
+    </div>
+    <ul class="banner width1200">
+        <li><a href="/fenyelike" class="border-b">全部产品</a></li>
+        <li><a href="#">财税服务</a></li>
+        <li><a href="#">公司工商</a></li>
+        <li><a href="#">人事外包</a></li>
+        <li><a href="#">加盟我们</a></li>
+        <li><a href="#">店铺</a></li>
+    </ul>
+    <div class="line-aqua"></div>
+    <div class="content width1200">
+        <p class="product_num font-aqua">全部商品（1）</p>
+        <hr color="#ededed" size="1">
+        <p class="shop">店铺：云智汇咨询服务有限公司</p>
+        <ul class="product_list_title">
+            <li>图片</li>
+            <li>服务商品</li>
+            <li>单价</li>
+            <li>数量</li>
+            <li>金额</li>
+            <li>操作</li>
+        </ul>
+  <ul class="merchandise"  th:each="shopping:${xdShoppingList}">
+			 <li>
+			 	<img src="" alt="图片">
+	            <!-- <img th:src="@{'/headImg?id='+${shopping.id}}" alt="图片" />  -->
+		     </li>  
+           	 <li th:text="${shopping.proId}"></li>
+           	 <li th:text="${shopping.count}"></li>
+           	 <li id="tab">
+                <input class="min" name="" type="button" value="-" />
+                <input class="text_box"  th:value="${shopping.count}"/>
+                <input class="add" name="" type="button" value="+" />
+            </li>
+            	<li  th:text="${shopping.count}"></li>
+            <li>
+            	<button th:data-id="${shopping.id}" th:onclick="deletes(this.getAttribute('data-id'))" type="button">删除</button>
+            </li>
+        </ul>
+         
+         <ul class="price" > 
+        	<li><span >合计金额：<label id="total"></label></span></li> 
+          
+            <li>
+                <a href="/fenyelike">继续购物</a>
+                <a href="e-commerce_settlement.html">去结算</a>
+            </li>
+        </ul> 
+        
+        <input type="hidden" th:value="${count}" id="count" />
+		<input type="hidden" th:value="${pageSize}" id="pageSize" />
+		<input type="hidden" th:value="${pageStart}" id="pageStart" />
+        <table align="center" border="1" cellspacing="0"></table>
+       <div class="center"
+		th:with="pageNext=${pageStart}+${pageSize},
+		pagePre=${pageStart}-${pageSize},
+		modPage=${count}%${pageSize},
+		pageLast=${count}-${modPage},
+		lastPage=${count}-${pageSize}">
+	
+		<ul class="pagination">
+		
+			<li><a th:href="@{'/e_shoppingcar?pageStart=' + 0+'&id='+${id}}">首页</a></li>
+			<li><span th:if="${pagePre} ge '0'" class="main-pagination-page"><a
+					th:href="@{'/e_shoppingcar?pageStart=' + ${pagePre}+'&id='+${id}}">«</a></span></li>
+			<li><div id="mydiv"></div></li>
+			<li><span th:if="${pageNext} lt ${count}" ><a
+					th:href="@{'/e_shoppingcar?pageStart=' + ${pageNext}+'&id='+${id}}"  >»</a></span></li>
+			<li><span th:if="${modPage} eq  '0'"  ><a
+					th:href="@{'/e_shoppingcar?pageStart=' + ${lastPage}+'&id='+${id}}">末页</a></span></li>
+			<li><span th:unless="${modPage} eq  '0'"  ><a
+					th:href="@{'/e_shoppingcar?pageStart=' + ${pageLast}+'&id='+${id}}">末页</a></span></li>
+		</ul>
+	</div>
+    <script src="./js/e-commerce_shoping-car.js"></script>
+</body>
+
+</html>
