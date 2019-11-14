@@ -107,16 +107,16 @@
 	
 		<ul class="pagination">
 		
-			<li><a th:href="@{'/fenyelike?pageStart=' + 0+'&productName='+${productName}}">首页</a></li>
+			<li><a th:href="@{'/e_product?pageStart=' + 0+'&productName='+${productName}}">首页</a></li>
 			<li><span th:if="${pagePre} ge '0'"><a
-					th:href="@{'/fenyelike?pageStart=' + ${pagePre}+'&productName='+${productName}}">«</a></span></li>
+					th:href="@{'/e_product?pageStart=' + ${pagePre}+'&productName='+${productName}}">«</a></span></li>
 			<li><div id="mydiv"></div></li>
 			<li><span th:if="${pageNext} lt ${count}"><a
-					th:href="@{'/fenyelike?pageStart=' + ${pageNext}+'&productName='+${productName}}">»</a></span></li>
+					th:href="@{'/e_product?pageStart=' + ${pageNext}+'&productName='+${productName}}">»</a></span></li>
 			<li><span th:if="${modPage} eq  '0'"><a
-					th:href="@{'/fenyelike?pageStart=' + ${lastPage}+'&productName='+${productName}}">末页</a></span></li>
+					th:href="@{'/e_product?pageStart=' + ${lastPage}+'&productName='+${productName}}">末页</a></span></li>
 			<li><span th:unless="${modPage} eq  '0'"><a
-					th:href="@{'/fenyelike?pageStart=' + ${pageLast}+'&productName='+${productName}}">末页</a></span></li>
+					th:href="@{'/e_product?pageStart=' + ${pageLast}+'&productName='+${productName}}">末页</a></span></li>
 		</ul>
 	</div>
     <script src="./js/e-commerce_product.js"></script>

@@ -22,4 +22,6 @@ public interface XdShoppingService {
 	int insertShopping(XdShopping user);
 	
 	List<XdShopping> selectAll();
+	
+	List<XdShopping> selectByOther();
 }

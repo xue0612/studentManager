@@ -12,6 +12,8 @@ public interface XdShoppingMapper {
 	long countByExample();
 
 	int getCount(@Param("id") String id);
+	
+	List<XdShopping> selectByOther();
 
 	List<XdShopping> selectById(XdShoppingExample example);
 

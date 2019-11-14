@@ -67,8 +67,12 @@ public class XdShoppingServiceImpl implements XdShoppingService{
 
 	@Override
 	public List<XdShopping> selectAll() {
-		// TODO Auto-generated method stub
 		return xdShoppingMapper.selectByExample(null);
+	}
+
+	@Override
+	public List<XdShopping> selectByOther() {
+		return xdShoppingMapper.selectByOther();
 	}
 
 }

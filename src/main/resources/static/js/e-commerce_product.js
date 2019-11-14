@@ -39,7 +39,7 @@ $(".content-nav li").on("click", function(event){
 
 $(".search-btn").on("click", function(event){
     var productName=$(".search input").val();
-    location.href="fenyelike?productName="+productName;
+    location.href="e_product?productName="+productName;
 })
 
 function inCar(id){
@@ -85,9 +85,9 @@ $(document).ready(function(){
 		if(cpage<=10){
 			for(var i=1;i<=cpage;i++){
 				if(i==nowpage){
-					strhtml+='<a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
+					strhtml+='<a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
 				}else{
-					strhtml+='<span> <a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
+					strhtml+='<span> <a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
 				}
 			}
 		}
@@ -98,10 +98,10 @@ $(document).ready(function(){
 				for(var i=1;i<=10;i++){			
 				
 					if(i==nowpage){
-						strhtml+='<a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
+						strhtml+='<a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
 						//strhtml+='<a href=/userAll?pageStart='+psize*(i-1)+' style="background-color:#aaaaaa"><div class="nowpage">'+i+'</div></a>';
 					}else{
-						strhtml+='<span> <a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
+						strhtml+='<span> <a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
 					}
 				}
 			}
@@ -110,10 +110,10 @@ $(document).ready(function(){
 				for(var i=nowpage-5;i<=nowpage+4;i++){//6--15			
 			
 					if(i==nowpage){
-						strhtml+='<a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
+						strhtml+='<a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
 						//strhtml+='<a href=/userAll?pageStart='+psize*(i-1)+' style="background-color:#aaaaaa"><div class="nowpage">'+i+'</div></a>';
 					}else{
-						strhtml+='<span> <a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
+						strhtml+='<span> <a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
 					}
 				
 				}
@@ -123,10 +123,10 @@ $(document).ready(function(){
 				for(var i=cpage-9;i<=cpage;i++){
 				
 					if(i==nowpage){
-						strhtml+='<a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
+						strhtml+='<a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+' style="background-color:#aaaaaa;font-weight:700">'+i+'</a>';
 						//strhtml+='<a href=/userAll?pageStart='+psize*(i-1)+' style="background-color:#aaaaaa"><div class="nowpage">'+i+'</div></a>';
 					}else{
-						strhtml+='<span> <a href=/fenyelike?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
+						strhtml+='<span> <a href=/e_product?pageStart='+psize*(i-1)+'&productName='+productName+'>'+i+'</a></span>';
 					}
 				}
 			}
