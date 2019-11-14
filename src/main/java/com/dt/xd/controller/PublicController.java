@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.dt.xd.service.XdShoppingService;
 import com.dt.xd.service.XdUserService;
+import com.dt.xd.service.XdProductService;
 import com.dt.xd.xdProduct.XdProduct;
 import com.dt.xd.xdShopping.XdShopping;
 import com.dt.xd.xdUser.XdUser;
